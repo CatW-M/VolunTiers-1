@@ -1,19 +1,17 @@
-import React, { useState, useEffect, useSyncExternalStore } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import setAuthToken from "../utils/setAuthToken";
 import axios from 'axios';
 
 const { REACT_APP_SERVER_URL } = process.env;
 
-const OpportunitiesDetail = (user) => {
+const OpportunitiesDetail = () => {
     let location = useLocation();
     const data = location.state;
-    const userData = user;
     const [isregistered, setIsRegistered] = useState(false);
     const [profile, setProfile] = useState([]);
 
     console.log("This is the data>>>>>>>>>", data);
-    console.log("Did the User info get passed????", user);
 
     useEffect(() => {
         renderProfiles();

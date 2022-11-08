@@ -5,8 +5,8 @@ const { REACT_APP_SERVER_URL } = process.env;
 const Past = () => {
   const [pastOpp, setPastOpp] = useState([]);
 
-  useEffect(async () => {
-    await fetchPastOpp();
+  useEffect(() => {
+    fetchPastOpp();
   }, [])
 
   useEffect(() => {
